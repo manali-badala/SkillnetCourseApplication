@@ -18,7 +18,7 @@ const url = "http://localhost:8080/api/users";
 
   return (
     <>
-        <h1> React frontend </h1>
+        <h1> Full Application </h1>
           <h2>Automated Deployment </h2>
         {/*{JSON.stringify(users)}*/}
     <table>
