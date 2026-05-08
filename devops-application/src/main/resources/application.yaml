@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: devops-application
+  datasource:
+    url: jdbc:sqlite:/Users/aibenderpvtltd/Downloads/users.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+
