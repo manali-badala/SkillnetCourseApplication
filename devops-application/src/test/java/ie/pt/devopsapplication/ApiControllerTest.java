@@ -49,11 +49,11 @@ class ApiControllerTest {
         mockMvc.perform(get("/api/users"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].id").value(1))
+                .andExpect(jsonPath("$[0].Id").value(1))
                 .andExpect(jsonPath("$[0].name").value("Alice"))
                 .andExpect(jsonPath("$[0].email").value("alice@example.com"))
                 .andExpect(jsonPath("$[0].active").value(true))
-                .andExpect(jsonPath("$[1].id").value(2))
+                .andExpect(jsonPath("$[1].Id").value(2))
                 .andExpect(jsonPath("$[1].name").value("Bob"))
                 .andExpect(jsonPath("$[1].email").value("bob@example.com"))
                 .andExpect(jsonPath("$[1].active").value(false));
@@ -71,7 +71,7 @@ class ApiControllerTest {
 
         mockMvc.perform(get("/api/users/1"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
+                .andExpect(jsonPath("$.Id").value(1))
                 .andExpect(jsonPath("$.name").value("Alice"))
                 .andExpect(jsonPath("$.email").value("alice@example.com"))
                 .andExpect(jsonPath("$.active").value(true));
@@ -104,7 +104,7 @@ class ApiControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(inputUser)))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id").value(3))
+                .andExpect(jsonPath("$.Id").value(3))
                 .andExpect(jsonPath("$.name").value("Charlie"))
                 .andExpect(jsonPath("$.email").value("charlie@example.com"))
                 .andExpect(jsonPath("$.active").value(true));
@@ -130,7 +130,7 @@ class ApiControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(updatedDetails)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
+                .andExpect(jsonPath("$.Id").value(1))
                 .andExpect(jsonPath("$.name").value("New Name"))
                 .andExpect(jsonPath("$.email").value("new@example.com"))
                 .andExpect(jsonPath("$.active").value(true));
